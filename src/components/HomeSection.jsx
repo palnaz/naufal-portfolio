@@ -1,0 +1,62 @@
+import { ArrowDown } from "lucide-react";
+
+export const HomeSection = () => {
+  return (
+    <section
+      id="home"
+      className="relative min-h-screen flex items-center justify-center px-4"
+    >
+      <div className="container max-w-4xl mx-auto z-10">
+        <div className="flex flex-col md:flex-row items-center">
+          <div className="md:w-1/2 text-center md:text-left">
+            <div className="space-y-6">
+              <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
+                <span className="opacity-0 animate-fade-in">
+                  Hi, my name is
+                </span>
+                <span className="text-primary opacity-0 animate-fade-in-delay-1">
+                  {" "}
+                  Naufal
+                </span>
+                <span className="text-primary ml-2 opacity-0 animate-fade-in-delay-2">
+                  {" "}
+                  Ahmad
+                </span>
+                <span className="text-primary ml-2 opacity-0 animate-fade-in-delay-3">
+                  {" "}
+                  Fauzan
+                </span>
+              </h1>
+              <p className="ml-2 opacity-0 animate-fade-in-delay-4">
+                I'm a versatile Computer Science undergraduate student from
+                BINUS University with a solid foundation in programming and
+                practical experience as a backend developer. Complemented by
+                extensive experience in leadership, event planning, and product
+                development within BINUS English Club (BNEC). A bilingual and
+                effective communicator with strong skills in teamwork and
+                problem-solving, ready to bring both technical and leadership
+                capabilities to a dynamic team.
+              </p>
+              <a
+                href="https://docs.google.com/document/d/1R0U9PkR0pESgZS06lyfubTRHejZlWVPV/edit"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="cosmic-button hover:bg-foreground hover:text-primary transition-colors duration-300 ml-2 opacity-0 animate-fade-in-delay-4"
+              >
+                View My CV
+              </a>
+            </div>
+          </div>
+          <div className="md:w-1/2 mt-8 md:mt-0 flex justify-center opacity-0 animate-fade-in-delay-1">
+            <img src="/images/me.png" alt="Naufal Ahmad Fauzan" />
+          </div>
+        </div>
+      </div>
+
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce">
+        <span className="text-sm text-muted-foreground mb-2"> Scroll </span>
+        <ArrowDown className="h-5 w-5 text-primary" />
+      </div>
+    </section>
+  );
+};

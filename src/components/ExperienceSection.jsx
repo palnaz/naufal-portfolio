@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 
-// --- DATA --- (Copy the data structures from above here)
+// --- DATA ---
 const workExperience = {
   logo: "/images/dishut.png",
   company: "Dinas Kehutanan Provinsi Lampung",
@@ -10,9 +10,9 @@ const workExperience = {
     "Collaborated within a cross-functional team of five (Project Manager, 2 Backend, 1 Frontend, 1 QA) to develop a comprehensive forestry management application using Laravel as one of two backend developers.",
   tags: ["PHP", "MySQL", "Laravel", "REST APIs"],
   images: [
-    "/images/sitanihut1.jpg", // Replace with your image path
-    "/images/sitanihut2.jpg", // Replace with your image path
-    "/images/sitanihut3.jpg", // Replace with your image path
+    "/images/sitanihut1.jpeg",
+    "/images/sitanihut2.jpeg",
+    "/images/sitanihut3.jpeg",
   ],
 };
 
@@ -56,10 +56,14 @@ const organizationalExperience = {
       ],
     },
   ],
+  images: ["/images/bnec1.jpeg", "/images/bnec2.png", "/images/bnec3.png"],
 };
 
 // --- COMPONENT ---
 export const ExperienceSection = () => {
+  // State to hold the URL of the image to be viewed in full size
+  const [selectedImage, setSelectedImage] = useState(null);
+
   return (
     <section id="experience" className="py-24 px-4 relative">
       <div className="container mx-auto max-w-5xl">
@@ -77,16 +81,15 @@ export const ExperienceSection = () => {
               alt={`${workExperience.company} Logo`}
               className="absolute top-0 left-0 transform -translate-x-1/3 -translate-y-1/2 h-24 w-24 rounded-full bg-background p-2 border-2 border-primary object-contain"
             />
-
-            <h4 className="text-2xl font-bold text-primary mb-6">
-              {workExperience.company}
-            </h4>
             <div className="flex flex-col sm:flex-row justify-between items-start mb-2">
               <h4 className="text-2xl font-bold">{workExperience.role}</h4>
               <span className="text-muted-foreground mt-2 sm:mt-0">
                 {workExperience.duration}
               </span>
             </div>
+            <p className="text-xl text-primary font-semibold mb-4">
+              {workExperience.company}
+            </p>
             <p className="text-muted-foreground mb-6">
               {workExperience.description}
             </p>
@@ -98,6 +101,22 @@ export const ExperienceSection = () => {
                 >
                   {tag}
                 </span>
+              ))}
+            </div>
+
+            <div className="mt-6 grid grid-cols-3 gap-4">
+              {workExperience.images.map((image, index) => (
+                <button
+                  key={index}
+                  onClick={() => setSelectedImage(image)}
+                  className="focus:outline-none"
+                >
+                  <img
+                    src={image}
+                    alt={`Work experience gallery image ${index + 1}`}
+                    className="w-full h-32 object-cover rounded-lg shadow-md hover:opacity-80 transition-opacity"
+                  />
+                </button>
               ))}
             </div>
           </div>
@@ -114,13 +133,9 @@ export const ExperienceSection = () => {
               alt={`${organizationalExperience.company} Logo`}
               className="absolute top-0 right-0 transform translate-x-1/3 -translate-y-1/2 h-24 w-24 rounded-full bg-background p-2 border-2 border-primary object-contain"
             />
-
-            {/* Display the shared company name once at the top */}
             <h4 className="text-2xl font-bold text-primary mb-6">
               {organizationalExperience.company}
             </h4>
-
-            {/* Map through each role in the roles array */}
             {organizationalExperience.roles.map((roleItem) => (
               <div
                 key={roleItem.id}
@@ -147,9 +162,40 @@ export const ExperienceSection = () => {
                 </div>
               </div>
             ))}
+
+            <div className="mt-6 grid grid-cols-3 gap-4">
+              {organizationalExperience.images.map((image, index) => (
+                <button
+                  key={index}
+                  onClick={() => setSelectedImage(image)}
+                  className="focus:outline-none"
+                >
+                  <img
+                    src={image}
+                    alt={`Organizational experience gallery image ${index + 1}`}
+                    className="w-full h-32 object-cover rounded-lg shadow-md hover:opacity-80 transition-opacity"
+                  />
+                </button>
+              ))}
+            </div>
           </div>
         </div>
       </div>
+
+      {/* --- IMAGE MODAL (LIGHTBOX) --- */}
+      {selectedImage && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-80 cursor-pointer"
+          onClick={() => setSelectedImage(null)} // Close modal on backdrop click
+        >
+          <img
+            src={selectedImage}
+            alt="Full size view"
+            className="max-w-[95vw] max-h-[95vh] object-contain rounded-lg"
+            onClick={(e) => e.stopPropagation()} // Prevents closing when clicking the image itself
+          />
+        </div>
+      )}
     </section>
   );
 };

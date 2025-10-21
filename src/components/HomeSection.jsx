@@ -1,6 +1,25 @@
+import { useState, useEffect } from "react";
 import { ArrowDown } from "lucide-react";
 
 export const HomeSection = () => {
+  const [showScrollArrow, setShowScrollArrow] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 100) {
+        setShowScrollArrow(false);
+      } else {
+        setShowScrollArrow(true);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <section
       id="home"
@@ -29,21 +48,21 @@ export const HomeSection = () => {
               </h1>
               <p className="ml-2 opacity-0 animate-fade-in-delay-4">
                 I'm a versatile Computer Science undergraduate student from
-                BINUS University with a solid foundation in programming and
-                practical experience as a backend developer. Complemented by
-                extensive experience in leadership, event planning, and product
-                development within BINUS English Club (BNEC). A bilingual and
+                BINUS University that aspires to be a Software
+                Engineer/Fullstack Developer with a solid foundation in
+                programming and practical industry experience as a backend
+                developer, complemented by extensive experience in leadership,
+                event planning, and product development. I am a bilingual and
                 effective communicator with strong skills in teamwork and
                 problem-solving, ready to bring both technical and leadership
                 capabilities to a dynamic team.
               </p>
               <a
-                href="https://docs.google.com/document/d/1R0U9PkR0pESgZS06lyfubTRHejZlWVPV/edit"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="assets/CV Naufal Ahmad Fauzan.pdf"
+                download="assets/CV Naufal Ahmad Fauzan.pdf"
                 className="cosmic-button hover:bg-foreground hover:text-primary transition-colors duration-300 ml-2 opacity-0 animate-fade-in-delay-4"
               >
-                View My CV
+                Download CV
               </a>
             </div>
           </div>
@@ -53,7 +72,11 @@ export const HomeSection = () => {
         </div>
       </div>
 
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce">
+      <div
+        className={`absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce transition-opacity duration-300 ${
+          showScrollArrow ? "opacity-100" : "opacity-0"
+        }`}
+      >
         <span className="text-sm text-muted-foreground mb-2"> Scroll </span>
         <ArrowDown className="h-5 w-5 text-primary" />
       </div>

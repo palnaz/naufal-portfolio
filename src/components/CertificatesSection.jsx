@@ -1,9 +1,5 @@
-// Add this at the top of your file to enable React hooks
-"use client";
-
 import React, { useState } from "react";
 
-// --- CERTIFICATES DATA ---
 const certificates = [
   {
     id: 1,
@@ -31,27 +27,22 @@ const certificates = [
   },
 ];
 
-// --- COMPONENT ---
 export const CertificatesSection = () => {
-  // State to manage the currently selected image for the lightbox
   const [selectedImage, setSelectedImage] = useState(null);
 
   return (
     <section id="certificates" className="py-24 px-4 relative">
       <div className="container mx-auto max-w-5xl">
-        {/* Main Title */}
         <h2 className="text-3xl md:text-4xl font-bold mb-16 text-center">
           My <span className="text-primary">Certificates</span>
         </h2>
 
-        {/* Grid container for the certificate cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {certificates.map((cert) => (
             <div
               key={cert.id}
               className="group bg-card rounded-lg shadow-lg overflow-hidden flex flex-col"
             >
-              {/* Clickable Image Area */}
               <button
                 onClick={() => setSelectedImage(cert.image)}
                 className="focus:outline-none block"
@@ -63,7 +54,6 @@ export const CertificatesSection = () => {
                 />
               </button>
 
-              {/* Text Frame Area */}
               <div className="p-6">
                 <h3 className="text-lg font-bold mb-1">{cert.title}</h3>
                 <p className="text-sm text-muted-foreground">{cert.issuer}</p>
@@ -73,7 +63,6 @@ export const CertificatesSection = () => {
         </div>
       </div>
 
-      {/* --- IMAGE MODAL (LIGHTBOX) --- */}
       {selectedImage && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-80 cursor-pointer"

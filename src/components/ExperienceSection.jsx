@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 
-// --- DATA ---
 const workExperience = {
   logo: "/images/dishut.png",
   company: "Dinas Kehutanan Provinsi Lampung",
@@ -66,20 +65,16 @@ const organizationalExperience = {
   images: ["/images/bnec1.jpeg", "/images/bnec2.png", "/images/bnec3.png"],
 };
 
-// --- COMPONENT ---
 export const ExperienceSection = () => {
-  // State to hold the URL of the image to be viewed in full size
   const [selectedImage, setSelectedImage] = useState(null);
 
   return (
     <section id="experience" className="py-24 px-4 relative">
       <div className="container mx-auto max-w-5xl">
-        {/* Main Title */}
         <h2 className="text-3xl md:text-4xl font-bold mb-16 text-center">
           My <span className="text-primary">Experience</span>
         </h2>
 
-        {/* --- Work Experience Section --- */}
         <h3 className="text-2xl font-bold text-center mb-8">Work Experience</h3>
         <div className="flex justify-center mb-24">
           <div className="relative bg-card rounded-lg shadow-lg p-8 max-w-2xl w-full">
@@ -129,7 +124,6 @@ export const ExperienceSection = () => {
           </div>
         </div>
 
-        {/* --- Organizational Experience Section --- */}
         <h3 className="text-2xl font-bold text-center mb-8">
           Organizational Experience
         </h3>
@@ -189,17 +183,16 @@ export const ExperienceSection = () => {
         </div>
       </div>
 
-      {/* --- IMAGE MODAL (LIGHTBOX) --- */}
       {selectedImage && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-80 cursor-pointer"
-          onClick={() => setSelectedImage(null)} // Close modal on backdrop click
+          onClick={() => setSelectedImage(null)}
         >
           <img
             src={selectedImage}
             alt="Full size view"
             className="max-w-[95vw] max-h-[95vh] object-contain rounded-lg"
-            onClick={(e) => e.stopPropagation()} // Prevents closing when clicking the image itself
+            onClick={(e) => e.stopPropagation()}
           />
         </div>
       )}

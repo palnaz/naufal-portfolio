@@ -39,7 +39,6 @@ export const Navbar = () => {
             Portfolio
           </span>
         </a>
-        {/* Desktop nav */}
         <div className="hidden md:flex space-x-8">
           {navItems.map((item, key) => (
             <a
@@ -52,7 +51,6 @@ export const Navbar = () => {
           ))}
         </div>
 
-        {/* Mobile nav */}
         <button
           onClick={() => setIsMenuOpen((prev) => !prev)}
           className="md:hidden p-2 text-foreground z-50"

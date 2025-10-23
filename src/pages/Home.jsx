@@ -22,6 +22,7 @@ export const Home = () => {
         <CertificatesSection />
         <ContactSection />
       </main>
+      {/*Footer*/}
       <Footer />
     </div>
   );

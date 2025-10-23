@@ -1,5 +1,7 @@
 import { CertificatesSection } from "../components/CertificatesSection";
+import { ContactSection } from "../components/ContactsSection";
 import { ExperienceSection } from "../components/ExperienceSection";
+import { Footer } from "../components/Footer";
 import { HomeSection } from "../components/HomeSection";
 import { Navbar } from "../components/Navbar";
 import { ProjectsSection } from "../components/ProjectsSection";
@@ -18,8 +20,9 @@ export const Home = () => {
         <ExperienceSection />
         <ProjectsSection />
         <CertificatesSection />
+        <ContactSection />
       </main>
-      {/*Footer*/}
+      <Footer />
     </div>
   );
 };

@@ -40,9 +40,7 @@ export const ProjectsSection = () => {
           Featured <span className="text-primary"> Projects </span>
         </h2>
 
-        <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-          Here are some of my recent projects.
-        </p>
+        <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto"></p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, key) => (

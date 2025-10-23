@@ -8,7 +8,14 @@ const workExperience = {
   duration: "Jul 2025 - Aug 2025",
   description:
     "Collaborated within a cross-functional team of five (Project Manager, 2 Backend, 1 Frontend, 1 QA) to develop a comprehensive forestry management application using Laravel as one of two backend developers.",
-  tags: ["PHP", "MySQL", "Laravel", "REST APIs"],
+  tags: [
+    "PHP",
+    "MySQL",
+    "Laravel",
+    "REST APIs",
+    "Postman",
+    "Team Collaboration",
+  ],
   images: [
     "/images/sitanihut1.jpeg",
     "/images/sitanihut2.jpeg",
@@ -81,15 +88,15 @@ export const ExperienceSection = () => {
               alt={`${workExperience.company} Logo`}
               className="absolute top-0 left-0 transform -translate-x-1/3 -translate-y-1/2 h-24 w-24 rounded-full bg-background p-2 border-2 border-primary object-contain"
             />
+            <h4 className="text-2xl font-bold text-primary mb-6">
+              {workExperience.company}
+            </h4>
             <div className="flex flex-col sm:flex-row justify-between items-start mb-2">
               <h4 className="text-2xl font-bold">{workExperience.role}</h4>
               <span className="text-muted-foreground mt-2 sm:mt-0">
                 {workExperience.duration}
               </span>
             </div>
-            <p className="text-xl text-primary font-semibold mb-4">
-              {workExperience.company}
-            </p>
             <p className="text-muted-foreground mb-6">
               {workExperience.description}
             </p>

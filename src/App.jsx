@@ -17,7 +17,8 @@ function App() {
         blending="screen"
       />
 
-      <BrowserRouter>
+      <BrowserRouter basename="/naufal-portfolio">
+        {" "}
         <Routes>
           <Route index element={<Home />} />
           <Route path="*" element={<NotFound />} />

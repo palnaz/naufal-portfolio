@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Single Page Apps for GitHub Pages</title>
+    <script type="text/javascript">
+      var path = window.location.pathname;
+
+      var segment = path.split("/").slice(2).join("/");
+
+      window.location.replace(
+        window.location.protocol +
+          "//" +
+          window.location.hostname +
+          (window.location.port ? ":" + window.location.port : "") +
+          "/" +
+          path.split("/")[1] +
+          "/?p=/" +
+          segment
+      );
+    </script>
+  </head>
+  <body></body>
+</html>

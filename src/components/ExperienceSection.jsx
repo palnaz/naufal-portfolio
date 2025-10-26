@@ -81,7 +81,7 @@ export const ExperienceSection = () => {
             <img
               src={workExperience.logo}
               alt={`${workExperience.company} Logo`}
-              className="absolute top-0 left-0 transform -translate-x-1/3 -translate-y-1/2 h-24 w-24 rounded-full bg-background p-2 border-2 border-primary object-contain"
+              className="absolute top-0 left-0 transform -translate-x-1/3 -translate-y-1/2 h-24 w-24 rounded-full bg-background p-2 border-2 border-primary object-contain animate-float"
             />
             <h4 className="text-2xl font-bold text-primary mb-6">
               {workExperience.company}
@@ -132,7 +132,7 @@ export const ExperienceSection = () => {
             <img
               src={organizationalExperience.logo}
               alt={`${organizationalExperience.company} Logo`}
-              className="absolute top-0 right-0 transform translate-x-1/3 -translate-y-1/2 h-24 w-24 rounded-full bg-background p-2 border-2 border-primary object-contain"
+              className="absolute top-0 right-0 transform translate-x-1/3 -translate-y-1/2 h-24 w-24 rounded-full bg-background p-2 border-2 border-primary object-contain animate-float"
             />
             <h4 className="text-2xl font-bold text-primary mb-6">
               {organizationalExperience.company}

@@ -37,9 +37,7 @@ export const HomeSection = () => {
       className="relative min-h-screen flex items-center justify-center px-4"
     >
       <div className="container max-w-6xl mx-auto z-10">
-        {/* 1. Main layout container with a gap for spacing */}
         <div className="flex flex-col md:flex-row items-center gap-x-12">
-          {/* --- Text Content & Tech Stack (Left Column) --- */}
           <div className="md:w-2/3 text-center md:text-left">
             <div className="space-y-6">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
@@ -59,7 +57,6 @@ export const HomeSection = () => {
                   Fauzan
                 </span>
               </h1>
-              {/* 2. Reverted ScrollReveal to a standard <p> tag */}
               <p className="text-lg text-muted-foreground ml-2 opacity-0 animate-fade-in-delay-4">
                 I am a Computer Science student from BINUS University with a
                 solid programming foundation and practical industry experience
@@ -70,7 +67,6 @@ export const HomeSection = () => {
               </p>
             </div>
 
-            {/* 3. Tech Stack moved here and restructured */}
             <div className="mt-12">
               <h3 className="text-muted-foreground font-semibold mb-4 text-center md:text-left opacity-0 animate-fade-in-delay-4">
                 My Tech Stack
@@ -91,7 +87,6 @@ export const HomeSection = () => {
             </div>
           </div>
 
-          {/* --- Image (Right Column) --- */}
           <div className="md:w-1/3 mt-8 md:mt-0 flex justify-center opacity-0 animate-fade-in-delay-1">
             <img
               src="/images/me.png"
@@ -102,7 +97,6 @@ export const HomeSection = () => {
         </div>
       </div>
 
-      {/* Scroll Down Indicator */}
       <div
         className={`absolute bottom-4 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce transition-opacity duration-300 ${
           showScrollArrow ? "opacity-100" : "opacity-0"

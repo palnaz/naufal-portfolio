@@ -5,7 +5,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw; /* Use vw and vh for full viewport coverage */
+  width: 100vw;
   height: 100vh;
   z-index: -1;
 }

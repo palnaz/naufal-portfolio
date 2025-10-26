@@ -1,17 +1,13 @@
-"use client";
-
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 
-// --- UPDATED NAV ITEMS ---
 const navItems = [
   { name: "Home", href: "#home" },
   { name: "Experience", href: "#experience" },
   { name: "Projects", href: "#projects" },
   { name: "Certificates", href: "#certificates" },
   { name: "Contact", href: "#contact" },
-  // Add a new item with a special property 'isButton'
   {
     name: "Download CV",
     href: "assets/CV Naufal Ahmad Fauzan.pdf",
@@ -54,7 +50,6 @@ export const Navbar = () => {
         <div className="hidden md:flex items-center space-x-8">
           {navItems.map((item) =>
             item.isButton ? (
-              // If it's a button, render it with special styling
               <a
                 key={item.name}
                 href={item.href}
@@ -64,7 +59,6 @@ export const Navbar = () => {
                 {item.name}
               </a>
             ) : (
-              // Otherwise, render a normal text link
               <a
                 key={item.name}
                 href={item.href}
@@ -98,7 +92,6 @@ export const Navbar = () => {
           <div className="flex flex-col items-center space-y-8 text-xl">
             {navItems.map((item) =>
               item.isButton ? (
-                // Render the button in the mobile menu as well
                 <a
                   key={item.name}
                   href={item.href}
@@ -110,7 +103,6 @@ export const Navbar = () => {
                   {item.name}
                 </a>
               ) : (
-                // Render the normal links
                 <a
                   key={item.name}
                   href={item.href}

@@ -1,29 +1,33 @@
 import React, { useState } from "react";
+import certImage1 from "/images/certif1.png";
+import certImage2 from "/images/certif2.png";
+import certImage3 from "/images/certif3.png";
+import certImage4 from "/images/certif4.png";
 
 const certificates = [
   {
     id: 1,
     title: "Algorithm and Programming Course",
     issuer: "Issued by Dacode",
-    image: "/images/certif1.png",
+    image: certImage1,
   },
   {
     id: 2,
     title: "Finalist of BASIC 2024",
     issuer: "Issued by School of Information Systems",
-    image: "/images/certif2.png",
+    image: certImage2,
   },
   {
     id: 3,
     title: "Coordinator of Event Division",
     issuer: "Issued by BINUS English Club",
-    image: "/images/certif3.png",
+    image: certImage3,
   },
   {
     id: 4,
     title: "TOEFL ITP Score 620",
     issuer: "Issued by Englishvit",
-    image: "/images/certif4.png",
+    image: certImage4,
   },
 ];
 

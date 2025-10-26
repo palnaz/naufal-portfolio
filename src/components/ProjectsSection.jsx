@@ -1,4 +1,7 @@
 import { ArrowRight, ExternalLink, Github } from "lucide-react";
+import projectImage1 from "/images/project1.jpg";
+import projectImage2 from "/images/project2.png";
+import projectImage3 from "/images/project3.png";
 
 const projects = [
   {
@@ -6,7 +9,7 @@ const projects = [
     title: "SITANIHUT",
     description:
       "SITANIHUT (Sistem Informasi Petani Hutan) is a full-stack web application designed to digitize and centralize agricultural reporting..",
-    image: "/images/project1.jpg",
+    image: projectImage1,
     tags: ["React", "TailwindCSS", "PHP", "Laravel", "MySQL"],
     demoUrl:
       "https://www.figma.com/design/79lCIxpzsmZXNV3SHo4K98/Web-UID-Sitanihut?node-id=1-15&t=sKbQ2dZcON1apHEH-1",
@@ -15,7 +18,7 @@ const projects = [
     id: 2,
     title: "FitnSync Website Design",
     description: "Design prototype of a wellness web-based app.",
-    image: "/images/project2.png",
+    image: projectImage2,
     tags: ["Figma"],
     demoUrl:
       "https://www.figma.com/design/hHchFJTHOu6lnSVH9zbNBs/FITnSYNC-Entre-Market-Validation?node-id=0-1&t=0GRoF8x0nskqPsLj-1",
@@ -24,7 +27,7 @@ const projects = [
     id: 3,
     title: "Music Streaming Platform Prototype",
     description: "Design prototype of a music streaming platform using Figma.",
-    image: "/images/project3.png",
+    image: projectImage3,
     tags: ["Figma"],
     demoUrl:
       "https://www.figma.com/design/HmBn9Eaag9f0sYfIb9iXjQ/Willify?node-id=0-1&t=cmT2YS8hZSyxSc0m-1",

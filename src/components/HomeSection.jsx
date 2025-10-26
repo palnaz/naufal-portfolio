@@ -2,20 +2,33 @@
 
 import { useState, useEffect } from "react";
 import { ArrowDown } from "lucide-react";
+import profilePicture from "/images/me.png";
+import htmlLogo from "/logos/html.svg";
+import cssLogo from "/logos/css.svg";
+import javaLogo from "/logos/java.svg";
+import cLogo from "/logos/c.svg";
+import pythonLogo from "/logos/python.svg";
+import reactLogo from "/logos/react.svg";
+import tailwindLogo from "/logos/tailwind.svg";
+import javascriptLogo from "/logos/js.svg";
+import laravelLogo from "/logos/laravel.svg";
+import phpLogo from "/logos/php.svg";
+import mysqlLogo from "/logos/mysql.svg";
+import gitLogo from "/logos/git.svg";
 
 const techStack = [
-  { name: "HTML5", logo: "/logos/html.svg" },
-  { name: "CSS3", logo: "/logos/css.svg" },
-  { name: "Java", logo: "/logos/java.svg" },
-  { name: "C", logo: "/logos/c.svg" },
-  { name: "Python", logo: "/logos/python.svg" },
-  { name: "React", logo: "/logos/react.svg" },
-  { name: "Tailwind CSS", logo: "/logos/tailwind.svg" },
-  { name: "JavaScript", logo: "/logos/js.svg" },
-  { name: "Laravel", logo: "/logos/laravel.svg" },
-  { name: "PHP", logo: "/logos/php.svg" },
-  { name: "MySQL", logo: "/logos/mysql.svg" },
-  { name: "Git", logo: "/logos/git.svg" },
+  { name: "HTML5", logo: htmlLogo },
+  { name: "CSS3", logo: cssLogo },
+  { name: "Java", logo: javaLogo },
+  { name: "C", logo: cLogo },
+  { name: "Python", logo: pythonLogo },
+  { name: "React", logo: reactLogo },
+  { name: "Tailwind CSS", logo: tailwindLogo },
+  { name: "JavaScript", logo: javascriptLogo },
+  { name: "Laravel", logo: laravelLogo },
+  { name: "PHP", logo: phpLogo },
+  { name: "MySQL", logo: mysqlLogo },
+  { name: "Git", logo: gitLogo },
 ];
 
 export const HomeSection = () => {
@@ -89,7 +102,7 @@ export const HomeSection = () => {
 
           <div className="md:w-1/3 mt-8 md:mt-0 flex justify-center opacity-0 animate-fade-in-delay-1">
             <img
-              src="/images/me.png"
+              src={profilePicture}
               alt="Naufal Ahmad Fauzan"
               className="w-full max-w-xs md:max-w-sm rounded-lg shadow-2xl"
             />

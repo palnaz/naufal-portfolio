@@ -1,7 +1,15 @@
 import React, { useState } from "react";
+import dishutLogo from "/images/dishut.png";
+import bnecLogo from "/images/bnec.png";
+import sitanihutImage1 from "/images/sitanihut1.jpeg";
+import sitanihutImage2 from "/images/sitanihut2.jpeg";
+import sitanihutImage3 from "/images/sitanihut3.jpeg";
+import bnecImage1 from "/images/bnec1.jpeg";
+import bnecImage2 from "/images/bnec2.png";
+import bnecImage3 from "/images/bnec3.png";
 
 const workExperience = {
-  logo: "/images/dishut.png",
+  logo: dishutLogo,
   company: "Dinas Kehutanan Provinsi Lampung",
   role: "Backend Developer Intern",
   duration: "Jul 2025 - Aug 2025",
@@ -15,15 +23,11 @@ const workExperience = {
     "Postman",
     "Team Collaboration",
   ],
-  images: [
-    "/images/sitanihut1.jpeg",
-    "/images/sitanihut2.jpeg",
-    "/images/sitanihut3.jpeg",
-  ],
+  images: [sitanihutImage1, sitanihutImage2, sitanihutImage3],
 };
 
 const organizationalExperience = {
-  logo: "/images/bnec.png",
+  logo: bnecLogo,
   company: "BINUS English Club (BNEC)",
   roles: [
     {
@@ -62,7 +66,7 @@ const organizationalExperience = {
       ],
     },
   ],
-  images: ["/images/bnec1.jpeg", "/images/bnec2.png", "/images/bnec3.png"],
+  images: [bnecImage1, bnecImage2, bnecImage3],
 };
 
 export const ExperienceSection = () => {

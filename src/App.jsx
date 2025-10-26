@@ -1,9 +1,13 @@
+import { useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Home } from "./pages/home";
 import { NotFound } from "./pages/notFound";
 import DarkVeilBackground from "./components/DarkVeilBackground";
 
 function App() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <DarkVeilBackground
@@ -18,7 +22,6 @@ function App() {
       />
 
       <BrowserRouter basename="/naufal-portfolio">
-        {" "}
         <Routes>
           <Route index element={<Home />} />
           <Route path="*" element={<NotFound />} />

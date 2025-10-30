@@ -99,6 +99,15 @@ export const ExperienceSection = () => {
             <p className="text-muted-foreground mb-6">
               {workExperience.description}
             </p>
+            <div className="my-6">
+              <a
+                href="assets/Letter of Recommendation Naufal.pdf"
+                download="assets/Letter of Recommendation Naufal.pdf"
+                className="cosmic-button hover:bg-foreground hover:text-primary transition-colors duration-300 ml-2"
+              >
+                Download Recommendation Letter
+              </a>
+            </div>
             <div className="flex flex-wrap gap-2">
               {workExperience.tags.map((tag, index) => (
                 <span

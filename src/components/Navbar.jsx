@@ -46,7 +46,7 @@ export const Navbar = () => {
           </span>
         </a>
 
-        {/* --- DESKTOP NAVBAR --- */}
+        {/* DESKTOP NAVBAR */}
         <div className="hidden md:flex items-center space-x-8">
           {navItems.map((item) =>
             item.isButton ? (
@@ -54,7 +54,7 @@ export const Navbar = () => {
                 key={item.name}
                 href={item.href}
                 download="assets/CV Naufal Ahmad Fauzan.pdf"
-                className="cosmic-button hover:bg-foreground hover:text-primary transition-colors duration-300 ml-2" // Using your existing button style
+                className="cosmic-button hover:bg-foreground hover:text-primary transition-colors duration-300 ml-2"
               >
                 {item.name}
               </a>
@@ -70,7 +70,7 @@ export const Navbar = () => {
           )}
         </div>
 
-        {/* Mobile Menu Button (no change) */}
+        {/* Mobile Menu Button */}
         <button
           onClick={() => setIsMenuOpen((prev) => !prev)}
           className="md:hidden p-2 text-foreground z-50"
@@ -79,7 +79,7 @@ export const Navbar = () => {
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
 
-        {/* --- MOBILE MENU OVERLAY --- */}
+        {/*MOBILE MENU OVERLAY */}
         <div
           className={cn(
             "fixed inset-0 bg-background/95 backdrop-blur-md z-40 flex flex-col items-center justify-center",

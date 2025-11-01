@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import recLetterImage from "/assets/Letter of Recommendation Naufal.png";
 import dishutLogo from "/images/dishut.png";
 import bnecLogo from "/images/bnec.png";
 import sitanihutImage1 from "/images/sitanihut1.jpeg";
@@ -69,8 +69,9 @@ const organizationalExperience = {
   images: [bnecImage1, bnecImage2, bnecImage3],
 };
 
-export const ExperienceSection = () => {
-  const [selectedImage, setSelectedImage] = useState(null);
+// 2. Accept 'setSelectedImage' as a prop
+export const ExperienceSection = ({ setSelectedImage }) => {
+  // 3. The local useState for the modal has been REMOVED
 
   return (
     <section id="experience" className="py-24 px-4 relative">
@@ -87,27 +88,31 @@ export const ExperienceSection = () => {
               alt={`${workExperience.company} Logo`}
               className="absolute top-0 left-0 transform -translate-x-1/3 -translate-y-1/2 h-24 w-24 rounded-full bg-background p-2 border-2 border-primary object-contain animate-float"
             />
-            <h4 className="text-2xl font-bold text-primary mb-6">
-              {workExperience.company}
-            </h4>
             <div className="flex flex-col sm:flex-row justify-between items-start mb-2">
               <h4 className="text-2xl font-bold">{workExperience.role}</h4>
               <span className="text-muted-foreground mt-2 sm:mt-0">
                 {workExperience.duration}
               </span>
             </div>
+            <p className="text-xl text-primary font-semibold mb-4">
+              {workExperience.company}
+            </p>
+
+            {/* Removed ScrollReveal and replaced with a standard <p> tag */}
             <p className="text-muted-foreground mb-6">
               {workExperience.description}
             </p>
+
+            {/* 4. The download <a> tag is now a <button> with an onClick handler */}
             <div className="my-6">
-              <a
-                href="assets/Letter of Recommendation Naufal.pdf"
-                download="assets/Letter of Recommendation Naufal.pdf"
-                className="cosmic-button hover:bg-foreground hover:text-primary transition-colors duration-300 ml-2"
+              <button
+                onClick={() => setSelectedImage(recLetterImage)}
+                className="cosmic-button text-sm"
               >
-                Download Recommendation Letter
-              </a>
+                View Recommendation Letter
+              </button>
             </div>
+
             <div className="flex flex-wrap gap-2">
               {workExperience.tags.map((tag, index) => (
                 <span
@@ -161,6 +166,7 @@ export const ExperienceSection = () => {
                     {roleItem.duration}
                   </span>
                 </div>
+                {/* Removed ScrollReveal and replaced with a standard <p> tag */}
                 <p className="text-muted-foreground mb-4">
                   {roleItem.description}
                 </p>
@@ -196,19 +202,7 @@ export const ExperienceSection = () => {
         </div>
       </div>
 
-      {selectedImage && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-80 cursor-pointer"
-          onClick={() => setSelectedImage(null)}
-        >
-          <img
-            src={selectedImage}
-            alt="Full size view"
-            className="max-w-[95vw] max-h-[95vh] object-contain rounded-lg"
-            onClick={(e) => e.stopPropagation()}
-          />
-        </div>
-      )}
+      {/* 5. The modal JSX has been REMOVED from this file */}
     </section>
   );
 };

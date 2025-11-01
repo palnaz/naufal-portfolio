@@ -1,21 +1,22 @@
+"use client";
+
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
+// 1. Import the CV image
+import cvImage from "/assets/CV Naufal Ahmad Fauzan.png";
 
+// 2. The CV item has been REMOVED from this array
 const navItems = [
   { name: "Home", href: "#home" },
   { name: "Experience", href: "#experience" },
   { name: "Projects", href: "#projects" },
   { name: "Certificates", href: "#certificates" },
   { name: "Contact", href: "#contact" },
-  {
-    name: "Download CV",
-    href: "assets/CV Naufal Ahmad Fauzan.pdf",
-    isButton: true,
-  },
 ];
 
-export const Navbar = () => {
+// 3. Accept 'setSelectedImage' as a prop
+export const Navbar = ({ setSelectedImage }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -46,28 +47,25 @@ export const Navbar = () => {
           </span>
         </a>
 
-        {/* DESKTOP NAVBAR */}
+        {/* --- DESKTOP NAVBAR --- */}
         <div className="hidden md:flex items-center space-x-8">
-          {navItems.map((item) =>
-            item.isButton ? (
-              <a
-                key={item.name}
-                href={item.href}
-                download="assets/CV Naufal Ahmad Fauzan.pdf"
-                className="cosmic-button hover:bg-foreground hover:text-primary transition-colors duration-300 ml-2"
-              >
-                {item.name}
-              </a>
-            ) : (
-              <a
-                key={item.name}
-                href={item.href}
-                className="hover:text-primary transition-colors duration-300"
-              >
-                {item.name}
-              </a>
-            )
-          )}
+          {/* Render the normal navigation links from the array */}
+          {navItems.map((item) => (
+            <a
+              key={item.name}
+              href={item.href}
+              className="hover:text-primary transition-colors duration-300"
+            >
+              {item.name}
+            </a>
+          ))}
+          {/* 4. Add the "View CV" button separately after the links */}
+          <button
+            onClick={() => setSelectedImage(cvImage)}
+            className="cosmic-button text-sm"
+          >
+            View CV
+          </button>
         </div>
 
         {/* Mobile Menu Button */}
@@ -79,7 +77,7 @@ export const Navbar = () => {
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
 
-        {/*MOBILE MENU OVERLAY */}
+        {/*--- MOBILE MENU OVERLAY ---*/}
         <div
           className={cn(
             "fixed inset-0 bg-background/95 backdrop-blur-md z-40 flex flex-col items-center justify-center",
@@ -90,29 +88,27 @@ export const Navbar = () => {
           )}
         >
           <div className="flex flex-col items-center space-y-8 text-xl">
-            {navItems.map((item) =>
-              item.isButton ? (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="cosmic-button"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item.name}
-                </a>
-              ) : (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className="hover:text-primary transition-colors duration-300"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item.name}
-                </a>
-              )
-            )}
+            {/* Render the normal links in the mobile menu */}
+            {navItems.map((item) => (
+              <a
+                key={item.name}
+                href={item.href}
+                className="hover:text-primary transition-colors duration-300"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {item.name}
+              </a>
+            ))}
+            {/* 5. Add the "View CV" button to the mobile menu */}
+            <button
+              onClick={() => {
+                setSelectedImage(cvImage);
+                setIsMenuOpen(false);
+              }}
+              className="cosmic-button mt-4" // Added a top margin for spacing
+            >
+              View CV
+            </button>
           </div>
         </div>
       </div>
